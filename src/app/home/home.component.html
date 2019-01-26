@@ -1,0 +1,9 @@
+<div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <ul>
+        <li *ngFor="let team of allTeams"><a href="#" (click)="getPlayers(team)">{{ team.name }}</a></li>
+      </ul>
+      </div>
+    </div>
+  </div>
