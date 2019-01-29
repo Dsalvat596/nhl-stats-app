@@ -24,8 +24,4 @@ export class HomeComponent implements OnInit {
     })
   }
 
-  seeRoster(team){
-    let id = team.id
-    this.router.navigate( [id], {relativeTo: this.route} )
-  }
 }

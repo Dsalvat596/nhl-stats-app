@@ -1,0 +1,4 @@
+.roster-player:hover {
+    color: red;
+    cursor: pointer;
+}

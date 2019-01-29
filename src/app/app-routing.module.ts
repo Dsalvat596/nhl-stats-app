@@ -6,7 +6,7 @@ import { PlayersListComponent } from './players-list/players-list.component';
 const appRoutes = [
   { path: '', redirectTo: '/teams', pathMatch: 'full' },
   { path: 'teams', component: HomeComponent, children: [
-    { path: ':id', component: PlayersListComponent}
+    { path: ':id/roster', component: PlayersListComponent}
   ]}
 ]
 

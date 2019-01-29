@@ -7,13 +7,15 @@ import { HomeComponent } from './home/home.component';
 import { PlayersListComponent } from './players-list/players-list.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HeaderComponent } from './header/header.component';
+import { PlayerPopupComponent } from './player-popup/player-popup.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     PlayersListComponent,
-    HeaderComponent
+    HeaderComponent,
+    PlayerPopupComponent
     
   ],
   imports: [
