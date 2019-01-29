@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { TeamsService } from '../services/teams.service';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -9,7 +10,7 @@ import { TeamsService } from '../services/teams.service';
 export class HomeComponent implements OnInit {
   title = 'hockey-app';
   allTeams: any = [];
-  constructor(private teamsService: TeamsService){
+  constructor(private teamsService: TeamsService, private router: Router, private route: ActivatedRoute){
 
   }
   ngOnInit(){
@@ -20,11 +21,11 @@ export class HomeComponent implements OnInit {
         if(a.name > b.name) { return 1; }
         return 0;
       })
-      console.log(this.allTeams);
     })
   }
 
-  getTeamData(team){
-    console.log(team.id)
+  seeRoster(team){
+    let id = team.id
+    this.router.navigate( [id], {relativeTo: this.route} )
   }
 }

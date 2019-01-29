@@ -1,9 +1,12 @@
 <div class="container">
     <div class="row">
-      <div class="col-lg-12">
-        <ul>
-        <li *ngFor="let team of allTeams"><a href="#" (click)="getPlayers(team)">{{ team.name }}</a></li>
+      <div class="col-md-3">
+        <ul class="list-group">
+        <li class="list-group-item clearfix list-group-item-action" routerLinkActive="active" style="cursor: pointer;" *ngFor="let team of allTeams" (click)="seeRoster(team)"><span style="color: blue">{{ team.name }}</span></li>
       </ul>
+      </div>
+      <div class="col-md-9">
+        <router-outlet></router-outlet>
       </div>
     </div>
   </div>
