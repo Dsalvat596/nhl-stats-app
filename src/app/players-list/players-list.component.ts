@@ -12,7 +12,6 @@ import { take } from 'rxjs/operators';
   styleUrls: ['./players-list.component.css']
 })
 export class PlayersListComponent implements OnInit { 
-  team: string;
   teamId: number; 
   teamPlayers = [];
   selectedPlayer;

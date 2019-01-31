@@ -1,12 +1,16 @@
 <div class="container">
   <div class="row">
-    <div class="col-md-3 roster-player" *ngFor="let player of teamPlayers" (click)="getPlayerDetails(player)" >
-      <p>{{ player.person.fullName }}</p>
+    <div class="col-md-4"></div>
+    <div class="col-md-4">
+      <div class="team-logo">
+        <img src="src\assets\img\logo\{{teamId}}.png">
+      </div>
     </div>
+    <div class="col-md-4"></div>
   </div>
   <div class="row">
-    <div class="col-md-9">
-      {{team}}
+    <div class="col-md-3 roster-player" *ngFor="let player of teamPlayers" (click)="getPlayerDetails(player)" >
+      <p>{{ player.person.fullName }}</p>
     </div>
   </div>
 </div>

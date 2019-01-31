@@ -1,15 +1,26 @@
 <div class="container">
   <div class="row">
     <div class="col-md-12">
-      <h4 mat-dialog-title>{{thisPlayer.fullName}}</h4>
+      <h4 mat-dialog-title><span id="playerName">{{thisPlayer.fullName}}</span> 
+        <span id="captain" *ngIf="thisPlayer.captain">C</span>
+        <span id="alternateCaptain" *ngIf="thisPlayer.alternateCaptain">A</span>
+        <span id="playerNumber"> #{{thisPlayer.primaryNumber}}</span></h4>
       <img src="src\assets\img\flag\{{thisPlayer.nationality}}.png">
       <p *ngIf="thisPlayer.rookie" style="color: red; font-style: italic">Rookie</p>
+      <p>Age: {{thisPlayer.currentAge}}</p>
+      <p>Pos: {{thisPlayer.primaryPosition.name}}</p>
+      <p *ngIf="thisPlayer.primaryPosition.name !=='Goalie'">Shoots: {{thisPlayer.shootsCatches}}</p>
+      <p *ngIf="thisPlayer.primaryPosition.name ==='Goalie'">Catches: {{thisPlayer.shootsCatches}}</p>
+      <p>Hometown: {{thisPlayer.birthCity}},
+        <span *ngIf="thisPlayer.nationality === 'USA' || thisPlayer.nationality === 'CAN'"> {{thisPlayer.birthStateProvince}}</span>
+        <span *ngIf="thisPlayer.nationality !== 'USA' && thisPlayer.nationality !== 'CAN'"> {{thisPlayer.birthCountry}}</span>
+      </p>
 
 
       <mat-dialog-actions>
         <button class="btn btn-info">See More Details
         </button>
-        <button class="btn btn-danger" mat-dialog-close>Close</button>
+        <button class="btn btn-danger" mat-dialog-close style="font-weight: 800">&times;</button>
       </mat-dialog-actions>
     </div>
   </div>
