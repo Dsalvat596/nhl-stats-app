@@ -1,6 +1,10 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { PlayersService } from '../services/players.service';
 import { ActivatedRoute, Router, Params } from '@angular/router';
+import { MatDialog } from '@angular/material';
+import { PlayerPopupComponent } from '../player-popup/player-popup.component';
+import { take } from 'rxjs/operators';
+
 
 @Component({
   selector: 'app-players-list',
@@ -13,7 +17,7 @@ export class PlayersListComponent implements OnInit {
   teamPlayers = [];
   selectedPlayer;
 
-  constructor(private playersService: PlayersService,  private route: ActivatedRoute, private router: Router) { }
+  constructor(private playersService: PlayersService,  private route: ActivatedRoute, private router: Router,  public dialog: MatDialog) { }
 
   ngOnInit() {
     this.route.params.subscribe((params: Params)=>{
@@ -37,10 +41,20 @@ export class PlayersListComponent implements OnInit {
   getPlayerDetails(player){
      let playerId = +player.person.id
      this.playersService.getPlayerDetails(playerId)
-     this.playersService.selectedPlayerUpdated.subscribe((data)=>{
+     this.playersService.selectedPlayerUpdated
+     .pipe(take(1))
+     .subscribe((data)=>{
        this.selectedPlayer = data;
-       console.log(this.selectedPlayer);
-     })
+
+       let dialogRef = this.dialog.open(PlayerPopupComponent, {
+        data: this.selectedPlayer
+       });
+       dialogRef.afterClosed()
+       .pipe(take(1))
+       .subscribe((result)=>{
+         dialogRef = null;
+       });
+     });
   }
 
 }

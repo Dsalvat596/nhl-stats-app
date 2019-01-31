@@ -1,3 +1,16 @@
-<p>
-  player-popup works!
-</p>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h4 mat-dialog-title>{{thisPlayer.fullName}}</h4>
+      <img src="src\assets\img\flag\{{thisPlayer.nationality}}.png">
+      <p *ngIf="thisPlayer.rookie" style="color: red; font-style: italic">Rookie</p>
+
+
+      <mat-dialog-actions>
+        <button class="btn btn-info">See More Details
+        </button>
+        <button class="btn btn-danger" mat-dialog-close>Close</button>
+      </mat-dialog-actions>
+    </div>
+  </div>
+</div>
