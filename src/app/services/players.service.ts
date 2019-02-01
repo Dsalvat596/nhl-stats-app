@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { HttpClientModule } from '@angular/common/http';
 import { Observable, Subject } from 'rxjs';
+import { Player } from '../models/player';
 
 @Injectable({
   providedIn: 'root'
@@ -9,15 +9,15 @@ import { Observable, Subject } from 'rxjs';
 export class PlayersService {
   teamPlayers = [];
   selectedPlayer;
-  public playersUpdated: Observable<any[]>;
-  private playersSubject: Subject<any[]>;
-  public selectedPlayerUpdated: Observable<any>;
-  private selectedPlayerSubject: Subject<any>;
+  public playersUpdated: Observable<Player[]>;
+  private playersSubject: Subject<Player[]>;
+  public selectedPlayerUpdated: Observable<Player>;
+  private selectedPlayerSubject: Subject<Player>;
 
   constructor(private http: HttpClient) {
-    this.playersSubject = new Subject<any>();
+    this.playersSubject = new Subject<Player[]>();
     this.playersUpdated = this.playersSubject.asObservable();
-    this.selectedPlayerSubject = new Subject<any>();
+    this.selectedPlayerSubject = new Subject<Player>();
     this.selectedPlayerUpdated = this.selectedPlayerSubject.asObservable();
    }
 
@@ -31,7 +31,7 @@ export class PlayersService {
   }
 
   getPlayerDetails(playerId: number){
-    this.http.get<any>('https://statsapi.web.nhl.com/api/v1/people/' + playerId).subscribe((data)=>{
+     this.http.get<any>('https://statsapi.web.nhl.com/api/v1/people/' + playerId).subscribe((data)=>{
       let parsedPlayer = data.people[0];
       this.selectedPlayer = parsedPlayer;
       this.selectedPlayerSubject.next(this.selectedPlayer);

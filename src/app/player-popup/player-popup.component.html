@@ -11,14 +11,14 @@
       <p>Pos: {{thisPlayer.primaryPosition.name}}</p>
       <p *ngIf="thisPlayer.primaryPosition.name !=='Goalie'">Shoots: {{thisPlayer.shootsCatches}}</p>
       <p *ngIf="thisPlayer.primaryPosition.name ==='Goalie'">Catches: {{thisPlayer.shootsCatches}}</p>
-      <p>Hometown: {{thisPlayer.birthCity}},
+      <p>Place of Birth: {{thisPlayer.birthCity}},
         <span *ngIf="thisPlayer.nationality === 'USA' || thisPlayer.nationality === 'CAN'"> {{thisPlayer.birthStateProvince}}</span>
         <span *ngIf="thisPlayer.nationality !== 'USA' && thisPlayer.nationality !== 'CAN'"> {{thisPlayer.birthCountry}}</span>
       </p>
 
 
       <mat-dialog-actions>
-        <button class="btn btn-info">See More Details
+        <button class="btn btn-info" (click)="goToPlayerDetails(thisPlayer.id)">See More Details
         </button>
         <button class="btn btn-danger" mat-dialog-close style="font-weight: 800">&times;</button>
       </mat-dialog-actions>

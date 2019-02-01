@@ -1,0 +1,22 @@
+#small-team-logo {
+    max-width: 50px;
+}
+
+#small-flag {
+    max-width: 30px;
+    margin-bottom: 5px;
+}
+
+.player-number {
+    margin-left: 32px;
+}
+.profile {
+    width: 255px;
+    height: 330px;
+    border: solid rgba(22, 48, 82, 0.356) 7px;
+}
+
+.rookie {
+    font-size: 14px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif
+}
