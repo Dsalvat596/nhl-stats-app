@@ -1,0 +1,25 @@
+<h2>{{season}} Stats</h2>
+<button class='btn btn-danger' (click)="onSelectSeason('20172018')">2018</button>
+<div class="row">
+  <div class="col-md-6">
+      <p>Games played: {{currentYearStats.games}}</p>
+      <p>Goals {{currentYearStats.goals}}</p>
+      <p>Assists: {{currentYearStats.assists}}</p>
+      <p>Total Points: {{currentYearStats.points}}</p>
+      <p>Average TOI: {{currentYearStats.timeOnIcePerGame}}</p>
+      <p>Points Per Game: {{currentYearStats.points / currentYearStats.games|number: '1.2-3'}}</p>
+      <p>PIM: {{currentYearStats.pim}}</p>
+  </div>
+  <div class="col-md-6">
+      <p>Plus/Minus: {{currentYearStats.plusMinus}} </p>
+      <p>PowerPlay Goals: {{currentYearStats.powerPlayGoals}}</p>
+      <p>PowerPlay Points: {{currentYearStats.powerPlayPoints}}</p>
+      <p>PP ATOI: {{currentYearStats.powerPlayTimeOnIcePerGame}}</p>
+      <p>Shots on Goal: {{currentYearStats.shots}}</p>
+      <p>Shots Blocked: {{currentYearStats.blocked}}</p>
+      <p>Hits: {{currentYearStats.hits}}</p>
+  </div>
+</div>
+
+
+

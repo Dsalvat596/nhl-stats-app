@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { HttpClientModule } from '@angular/common/http';
 import { Observable, Subject } from 'rxjs';
 
 @Injectable({
@@ -24,4 +23,11 @@ export class TeamsService {
     })
   }
 
+// _getTeamById(id:number){
+//   for(let i=0; i < this.allTeams.length; i++){
+//       if(this.allTeams[i].id === id){
+//         return this.allTeams[i].name
+//       }
+//     }
+//   }
 }

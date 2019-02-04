@@ -5,6 +5,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { HttpModule } from '@angular/http';
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatSelectModule } from '@angular/material/select';
+
 
 
 
@@ -14,6 +16,7 @@ import { PlayersListComponent } from './players-list/players-list.component';
 import { HeaderComponent } from './header/header.component';
 import { PlayerPopupComponent } from './player-popup/player-popup.component';
 import { PlayerDetailComponent } from './player-detail/player-detail.component';
+import { CurrentSeasonStatsComponent } from './current-season-stats/current-season-stats.component';
 
 
 @NgModule({
@@ -23,7 +26,8 @@ import { PlayerDetailComponent } from './player-detail/player-detail.component';
     PlayersListComponent,
     HeaderComponent,
     PlayerPopupComponent,
-    PlayerDetailComponent
+    PlayerDetailComponent,
+    CurrentSeasonStatsComponent
     
   ],
   imports: [
@@ -32,7 +36,8 @@ import { PlayerDetailComponent } from './player-detail/player-detail.component';
     AppRoutingModule,
     MatDialogModule,
     BrowserAnimationsModule,
-    HttpModule
+    HttpModule,
+    MatSelectModule
   ],
   providers: [],
   entryComponents: [PlayerPopupComponent],

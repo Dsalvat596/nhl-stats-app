@@ -2,12 +2,12 @@
   <div class="row">
     <div class="col-md-2 spacing"></div>
     <div class="col-md-5">
-      <h3 class="player-name">{{ thisPlayer.fullName }} <img id="small-flag" src="src\assets\img\flag\{{thisPlayer.nationality}}.png"> <span class="player-number">{{ thisPlayer.primaryNumber }}</span></h3>
+      <h3 id="playerName">{{ thisPlayer.fullName }} <img id="small-flag" src="src\assets\img\flag\{{thisPlayer.nationality}}.png"> <span id="playerNumber">{{ thisPlayer.primaryNumber }}</span></h3>
       <h5 id="team">
-          <span ><img id="small-team-logo" src="src\assets\img\logo\{{thisPlayer.currentTeam.id}}.png"></span>
+          <span><img id="small-team-logo" src="src\assets\img\logo\{{thisPlayer.currentTeam.id}}.png"></span>
          {{ thisPlayer.currentTeam.name }}
-          <span id="captain" *ngIf="thisPlayer.captain">C</span>
-          <span id="alternateCaptain" *ngIf="thisPlayer.alternateCaptain">A</span>
+          <span id="captain" *ngIf="thisPlayer.captain">(Captain)</span>
+          <span id="alternateCaptain" *ngIf="thisPlayer.alternateCaptain">Alt Captain</span>
           <span class="rookie "*ngIf="thisPlayer.rookie" style="color: red; font-style: italic">Rookie</span>
       </h5>
       <p>Position: {{thisPlayer.primaryPosition.name}}</p>
@@ -19,7 +19,7 @@
       <p>Place of Birth: {{thisPlayer.birthCity}},
           <span *ngIf="thisPlayer.nationality === 'USA' || thisPlayer.nationality === 'CAN'"> {{thisPlayer.birthStateProvince}}</span>
           <span *ngIf="thisPlayer.nationality !== 'USA' && thisPlayer.nationality !== 'CAN'"> {{thisPlayer.birthCountry}}</span>
-        </p>  
+        </p> 
     </div>
     <div class="col-md-3">
       <img class="profile" src="src\assets\img\profile\profile.png">
@@ -28,7 +28,8 @@
   <div class="row">
     <div class="col-md-2"></div>
     <div class="col-md-10">
-      --- stats component here ---
+      <hr>
+      <app-current-season-stats [player]="thisPlayer"></app-current-season-stats>
     </div>
   </div>
 </div>

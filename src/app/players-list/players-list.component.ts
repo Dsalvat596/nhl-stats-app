@@ -4,6 +4,7 @@ import { ActivatedRoute, Router, Params } from '@angular/router';
 import { MatDialog } from '@angular/material';
 import { PlayerPopupComponent } from '../player-popup/player-popup.component';
 import { take } from 'rxjs/operators';
+import { TeamsService } from '../services/teams.service';
 
 
 @Component({
@@ -12,11 +13,12 @@ import { take } from 'rxjs/operators';
   styleUrls: ['./players-list.component.css']
 })
 export class PlayersListComponent implements OnInit { 
-  teamId: number; 
+  teamId: number;
+  teamName: string;
   teamPlayers = [];
   selectedPlayer;
 
-  constructor(private playersService: PlayersService,  private route: ActivatedRoute, private router: Router,  public dialog: MatDialog) { }
+  constructor(private playersService: PlayersService, private teamsService: TeamsService, private route: ActivatedRoute, private router: Router,  public dialog: MatDialog) { }
 
   ngOnInit() {
     this.route.params.subscribe((params: Params)=>{

@@ -1,15 +1,9 @@
-#small-team-logo {
-    max-width: 50px;
+p {
+    color: rgba(95, 94, 99, 0.726);
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
 }
 
-#small-flag {
-    max-width: 30px;
-    margin-bottom: 5px;
-}
 
-.player-number {
-    margin-left: 32px;
-}
 .profile {
     width: 255px;
     height: 330px;
@@ -19,4 +13,27 @@
 .rookie {
     font-size: 14px;
     font-family: Verdana, Geneva, Tahoma, sans-serif
+}
+
+.teamName {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+#small-team-logo {
+    max-width: 50px;
+}
+
+#small-flag {
+    max-width: 30px;
+    margin-bottom: 5px;
+}
+
+#playerNumber {
+    margin-left: 32px;
+    color: rgb(118, 118, 236);
+    font-family: fantasy
+}
+
+#playerName {
+    color: rgba(69, 70, 71, 0.726);
+    font-family: fantasy
 }

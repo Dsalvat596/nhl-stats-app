@@ -9,14 +9,8 @@
       <p *ngIf="thisPlayer.rookie" style="color: red; font-style: italic">Rookie</p>
       <p>Age: {{thisPlayer.currentAge}}</p>
       <p>Pos: {{thisPlayer.primaryPosition.name}}</p>
-      <p *ngIf="thisPlayer.primaryPosition.name !=='Goalie'">Shoots: {{thisPlayer.shootsCatches}}</p>
-      <p *ngIf="thisPlayer.primaryPosition.name ==='Goalie'">Catches: {{thisPlayer.shootsCatches}}</p>
-      <p>Place of Birth: {{thisPlayer.birthCity}},
-        <span *ngIf="thisPlayer.nationality === 'USA' || thisPlayer.nationality === 'CAN'"> {{thisPlayer.birthStateProvince}}</span>
-        <span *ngIf="thisPlayer.nationality !== 'USA' && thisPlayer.nationality !== 'CAN'"> {{thisPlayer.birthCountry}}</span>
-      </p>
-
-
+      <p>Height: {{thisPlayer.height}} </p>
+      <p>Weight: {{thisPlayer.weight}} </p>
       <mat-dialog-actions>
         <button class="btn btn-info" (click)="goToPlayerDetails(thisPlayer.id)">See More Details
         </button>
