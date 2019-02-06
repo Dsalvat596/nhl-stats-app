@@ -6,7 +6,7 @@ import { Observable, Subject } from 'rxjs';
   providedIn: 'root'
 })
 export class StatsService {
-public currentYearStats;
+public seasonStats;
 public statsUpdated: Observable<any[]>;
 private statsSubject: Subject<any[]>;
   constructor(private http: HttpClient) {
@@ -19,8 +19,8 @@ private statsSubject: Subject<any[]>;
     this.http.get('https://statsapi.web.nhl.com/api/v1/people/'+ playerId +'/stats?stats=statsSingleSeason&season=20182019')
       .subscribe((data)=>{
         let parsed = data['stats'][0].splits;
-        this.currentYearStats = parsed;
-        this.statsSubject.next(this.currentYearStats);
+        this.seasonStats = parsed;
+        this.statsSubject.next(this.seasonStats);
     })
   }
 
@@ -28,8 +28,8 @@ getSelectSeasonStats(playerId: Number, season: String){
   this.http.get('https://statsapi.web.nhl.com/api/v1/people/'+ playerId +'/stats?stats=statsSingleSeason&season='+ season)
   .subscribe((data)=>{
     let parsed = data['stats'][0].splits;
-    this.currentYearStats = parsed;
-    this.statsSubject.next(this.currentYearStats);
+    this.seasonStats = parsed;
+    this.statsSubject.next(this.seasonStats);
   })
 }
 }

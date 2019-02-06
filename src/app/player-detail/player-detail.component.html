@@ -1,10 +1,10 @@
 <div class="ccontainer">
   <div class="row">
     <div class="col-md-2 spacing"></div>
-    <div class="col-md-5">
+    <div class="col-md-5" *ngIf="thisPlayer">
       <h3 id="playerName">{{ thisPlayer.fullName }} <img id="small-flag" src="src\assets\img\flag\{{thisPlayer.nationality}}.png"> <span id="playerNumber">{{ thisPlayer.primaryNumber }}</span></h3>
       <h5 id="team">
-          <span><img id="small-team-logo" src="src\assets\img\logo\{{thisPlayer.currentTeam.id}}.png"></span>
+          <span><img id="small-team-logo" src="src\assets\img\logo\{{thisPlayer.currentTeam.id}}.png" (click)="navBackToTeam(thisPlayer.currentTeam.id)"></span>
          {{ thisPlayer.currentTeam.name }}
           <span id="captain" *ngIf="thisPlayer.captain">(Captain)</span>
           <span id="alternateCaptain" *ngIf="thisPlayer.alternateCaptain">Alt Captain</span>
@@ -25,11 +25,11 @@
       <img class="profile" src="src\assets\img\profile\profile.png">
     </div>
   </div>
-  <div class="row">
+  <div class="row" *ngIf="thisPlayer">
     <div class="col-md-2"></div>
     <div class="col-md-10">
       <hr>
-      <app-current-season-stats [player]="thisPlayer"></app-current-season-stats>
+      <app-season-stats [player]="thisPlayer"></app-season-stats>
     </div>
   </div>
 </div>

@@ -24,6 +24,10 @@ private sub: Subscription;
     })
   }
 
+  navBackToTeam(id: number){
+    this.router.navigateByUrl('/teams/' + id +'/roster');
+  }
+  
   ngOnDestroy(){
     this.sub.unsubscribe()
   }

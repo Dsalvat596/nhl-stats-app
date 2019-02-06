@@ -16,7 +16,7 @@ import { PlayersListComponent } from './players-list/players-list.component';
 import { HeaderComponent } from './header/header.component';
 import { PlayerPopupComponent } from './player-popup/player-popup.component';
 import { PlayerDetailComponent } from './player-detail/player-detail.component';
-import { CurrentSeasonStatsComponent } from './current-season-stats/current-season-stats.component';
+import { SeasonStatsComponent } from './season-stats/season-stats.component';
 
 
 @NgModule({
@@ -27,7 +27,7 @@ import { CurrentSeasonStatsComponent } from './current-season-stats/current-seas
     HeaderComponent,
     PlayerPopupComponent,
     PlayerDetailComponent,
-    CurrentSeasonStatsComponent
+    SeasonStatsComponent
     
   ],
   imports: [
