@@ -7,50 +7,48 @@
     </mat-option>
 </mat-select>
 </mat-form-field>
-<div class="nostats" *ngIf="noStats">
-        <h1>NO STATS</h1>
-    </div>
-    
-<div *ngIf="currentYearStats">
+<h3 class="nostats" *ngIf="noStats">Sorry, no stats found for {{season}}</h3>
+<div *ngIf="!noStats">
 <div class="row" *ngIf="player.primaryPosition.name!=='Goalie'">
   <div class="col-md-6">
       <h5>Season: {{season}}</h5>
-      <p>Games played: {{currentYearStats.games}}</p>
-      <p>Goals {{currentYearStats.goals}}</p>
-      <p>Assists: {{currentYearStats.assists}}</p>
-      <p>Total Points: {{currentYearStats.points}}</p>
-      <p>Average TOI: {{currentYearStats.timeOnIcePerGame}}</p>
-      <p>Points Per Game: {{currentYearStats.points / currentYearStats.games|number: '1.2-3'}}</p>
-      <p>PIM: {{currentYearStats.pim}}</p>
+      <p>Games played: {{currentYearStats?.games}}</p>
+      <p>Goals {{currentYearStats?.goals}}</p>
+      <p>Assists: {{currentYearStats?.assists}}</p>
+      <p>Total Points: {{currentYearStats?.points}}</p>
+      <p>Average TOI: {{currentYearStats?.timeOnIcePerGame}}</p>
+      <p>Points Per Game: {{currentYearStats?.points / currentYearStats?.games|number: '1.2-3'}}</p>
+      <p>PIM: {{currentYearStats?.pim}}</p>
   </div>
   <div class="col-md-6">
-      <p>Plus/Minus: {{currentYearStats.plusMinus}} </p>
-      <p>PowerPlay Goals: {{currentYearStats.powerPlayGoals}}</p>
-      <p>PowerPlay Points: {{currentYearStats.powerPlayPoints}}</p>
-      <p>PP ATOI: {{currentYearStats.powerPlayTimeOnIcePerGame}}</p>
-      <p>Shots on Goal: {{currentYearStats.shots}}</p>
-      <p>Shots Blocked: {{currentYearStats.blocked}}</p>
-      <p>Hits: {{currentYearStats.hits}}</p>
+      <p>Plus/Minus: {{currentYearStats?.plusMinus}} </p>
+      <p>PowerPlay Goals: {{currentYearStats?.powerPlayGoals}}</p>
+      <p>PowerPlay Points: {{currentYearStats?.powerPlayPoints}}</p>
+      <p>PP ATOI: {{currentYearStats?.powerPlayTimeOnIcePerGame}}</p>
+      <p>Shots on Goal: {{currentYearStats?.shots}}</p>
+      <p>Shots Blocked: {{currentYearStats?.blocked}}</p>
+      <p>Hits: {{currentYearStats?.hits}}</p>
   </div>
 </div>
 <div class="row" *ngIf="player.primaryPosition.name==='Goalie'">
     <div class="col-md-6">
-        <p>Starts: {{currentYearStats.gamesStarted}}</p>
-        <p>Wins: {{currentYearStats.wins}} </p>
-        <p>Losses: {{currentYearStats.losses}} </p>
-        <p>OT Losses: {{currentYearStats.ot}}</p>
-        <p>GAA: {{currentYearStats.goalAgainstAverage}}</p>
-        <p>Save %: {{currentYearStats.savePercentage}}</p>
-        <p>Shutouts: {{currentYearStats.shutouts}}</p>
+        <h5>Season: {{season}}</h5>
+        <p>Starts: {{currentYearStats?.gamesStarted}}</p>
+        <p>Wins: {{currentYearStats?.wins}} </p>
+        <p>Losses: {{currentYearStats?.losses}} </p>
+        <p>OT Losses: {{currentYearStats?.ot}}</p>
+        <p>GAA: {{currentYearStats?.goalAgainstAverage}}</p>
+        <p>Save %: {{currentYearStats?.savePercentage}}</p>
+        <p>Shutouts: {{currentYearStats?.shutouts}}</p>
     </div>
     <div class="col-md-6">
-        <p>Total Saves: {{currentYearStats.saves}}</p>
-        <p>ES Saves: {{currentYearStats.evenSaves}}</p>
-        <p>ES Shots Faced: {{currentYearStats.evenShots}}</p>
-        <p>ES Save%: {{currentYearStats.evenStrengthSavePercentage |number: '0.2-3'}}</p>
-        <p>PP Saves: {{currentYearStats.powerPlaySaves}}</p>
-        <p>PP Shots Faced: {{currentYearStats.powerPlayShots}}</p>
-        <p>PP Save%: {{currentYearStats.powerPlaySavePercentage|number: '0.2-3'}} </p>
+        <p>Total Saves: {{currentYearStats?.saves}}</p>
+        <p>ES Saves: {{currentYearStats?.evenSaves}}</p>
+        <p>ES Shots Faced: {{currentYearStats?.evenShots}}</p>
+        <p>ES Save%: {{currentYearStats?.evenStrengthSavePercentage |number: '0.2-3'}}</p>
+        <p>PP Saves: {{currentYearStats?.powerPlaySaves}}</p>
+        <p>PP Shots Faced: {{currentYearStats?.powerPlayShots}}</p>
+        <p>PP Save%: {{currentYearStats?.powerPlaySavePercentage|number: '0.2-3'}} </p>
     </div>
 
 </div>
