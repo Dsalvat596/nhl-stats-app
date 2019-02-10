@@ -7,7 +7,7 @@
     </mat-option>
 </mat-select>
 </mat-form-field>
-<h3 class="nostats" *ngIf="noStats">Sorry, no stats found for {{season}}</h3>
+<p class="nostats" *ngIf="noStats">Sorry, no NHL stats found for {{player.fullName}} for {{season}}</p>
 <div *ngIf="!noStats">
 <div class="row" *ngIf="player.primaryPosition.name!=='Goalie'">
   <div class="col-md-6">
@@ -17,14 +17,16 @@
       <p>Assists: {{currentYearStats?.assists}}</p>
       <p>Total Points: {{currentYearStats?.points}}</p>
       <p>Average TOI: {{currentYearStats?.timeOnIcePerGame}}</p>
-      <p>Points Per Game: {{currentYearStats?.points / currentYearStats?.games|number: '1.2-3'}}</p>
-      <p>PIM: {{currentYearStats?.pim}}</p>
+      <p>Points Per Game: {{currentYearStats?.points / currentYearStats?.games|number: '1.2-2'}}</p>
+      <p *ngIf="currentYearStats?.games >= 20">Points Pace(82 games): {{currentYearStats?.points / currentYearStats?.games * 82|number: '1.0-0'}}</p>
+      <p *ngIf="currentYearStats?.games < 20">Points Pace(82 games): N/A</p>
   </div>
   <div class="col-md-6">
+      <br>
       <p>Plus/Minus: {{currentYearStats?.plusMinus}} </p>
       <p>PowerPlay Goals: {{currentYearStats?.powerPlayGoals}}</p>
       <p>PowerPlay Points: {{currentYearStats?.powerPlayPoints}}</p>
-      <p>PP ATOI: {{currentYearStats?.powerPlayTimeOnIcePerGame}}</p>
+      <p>PIM: {{currentYearStats?.pim}}</p>
       <p>Shots on Goal: {{currentYearStats?.shots}}</p>
       <p>Shots Blocked: {{currentYearStats?.blocked}}</p>
       <p>Hits: {{currentYearStats?.hits}}</p>
@@ -37,7 +39,7 @@
         <p>Wins: {{currentYearStats?.wins}} </p>
         <p>Losses: {{currentYearStats?.losses}} </p>
         <p>OT Losses: {{currentYearStats?.ot}}</p>
-        <p>GAA: {{currentYearStats?.goalAgainstAverage}}</p>
+        <p>GAA: {{currentYearStats?.goalAgainstAverage | number: '1.2-2'}}</p>
         <p>Save %: {{currentYearStats?.savePercentage}}</p>
         <p>Shutouts: {{currentYearStats?.shutouts}}</p>
     </div>
@@ -45,10 +47,10 @@
         <p>Total Saves: {{currentYearStats?.saves}}</p>
         <p>ES Saves: {{currentYearStats?.evenSaves}}</p>
         <p>ES Shots Faced: {{currentYearStats?.evenShots}}</p>
-        <p>ES Save%: {{currentYearStats?.evenStrengthSavePercentage |number: '0.2-3'}}</p>
+        <p>ES Save%: {{currentYearStats?.evenStrengthSavePercentage /100 |number: '0.2-3'}}</p>
         <p>PP Saves: {{currentYearStats?.powerPlaySaves}}</p>
         <p>PP Shots Faced: {{currentYearStats?.powerPlayShots}}</p>
-        <p>PP Save%: {{currentYearStats?.powerPlaySavePercentage|number: '0.2-3'}} </p>
+        <p>PP Save%: {{currentYearStats?.powerPlaySavePercentage /100 |number: '0.2-3'}} </p>
     </div>
 
 </div>

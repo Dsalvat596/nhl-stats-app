@@ -21,8 +21,9 @@
           <span *ngIf="thisPlayer.nationality !== 'USA' && thisPlayer.nationality !== 'CAN'"> {{thisPlayer.birthCountry}}</span>
         </p> 
     </div>
-    <div class="col-md-3">
-      <img class="profile" src="src\assets\img\profile\profile.png">
+    <div class="col-md-3 profile-box" *ngIf="thisPlayer">
+      <!-- <img class="profile" src="src\assets\img\profile\{{thisPlayer.id}}.png"  alt="missing-img"> -->
+      <img class="profile" #img src="src/assets/img/profile/{{thisPlayer.id}}.png" (error)="img.src = 'src/assets/img/profile/profile.png'">
     </div>
   </div>
   <div class="row" *ngIf="thisPlayer">

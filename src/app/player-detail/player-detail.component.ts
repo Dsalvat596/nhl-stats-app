@@ -12,7 +12,6 @@ import { Subscription } from 'rxjs';
 export class PlayerDetailComponent implements OnInit, OnDestroy {
 private thisPlayer: Player;
 private sub: Subscription;
-
   constructor(private playersService: PlayersService,  private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit() {
@@ -28,6 +27,11 @@ private sub: Subscription;
     this.router.navigateByUrl('/teams/' + id +'/roster');
   }
   
+
+  noProfile(element){
+    element.onerror='';
+    element.src='src/assets/img/profile/profile.png'
+  }
   ngOnDestroy(){
     this.sub.unsubscribe()
   }

@@ -4,10 +4,18 @@ p {
 }
 
 
-.profile {
-    width: 255px;
-    height: 330px;
-    border: solid rgba(22, 48, 82, 0.356) 7px;
+img.profile {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.profile-box {
+    max-width: 255px;
+    max-height: 330px;
+    border: groove rgba(12, 12, 12, 0.397) 0.5px;
+    box-shadow: -4px 6px 16px #8888887a;
+    background-color: rgba(255, 255, 255, 0.336);
 }
 
 .rookie {
