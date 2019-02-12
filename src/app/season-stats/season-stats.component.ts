@@ -10,11 +10,12 @@ import { Subscription } from 'rxjs';
 })
 export class SeasonStatsComponent implements OnInit, OnDestroy {
   @Input() player: Player
-  season: string;
+  seasonFormatted: string;
+  // seasonUnf: string;
   noStats: boolean = false;
   currentYearStats;
   sub: Subscription;
-  seasons = ['20182019','20172018','20162017','20152016','20142015','20132014','20122013','20112012','20102011','20092010','20082009']
+  seasons = ['2018-2019','2017-2018','2016-2017','2015-2016','2014-2015','2013-2014','2012-2013','2011-2012','2010-2011','2009-2010','2008-2009']
 
   constructor(private statsService: StatsService) { }
 
@@ -25,19 +26,22 @@ export class SeasonStatsComponent implements OnInit, OnDestroy {
     //   this.currentYearStats = data[0].stat;
       
     // })
-    this.season = this.seasons[0];
-    this.onSelectSeason(this.season);
+    // this.seasonFormatted = this.seasons[0];
+    // let seasonUnf = this.seasonFormatted.replace("-", "");
+    this.onSelectSeason(this.seasons[0]);
   }
 
   onSelectSeason(season: string){
-    this.statsService.getSelectSeasonStats(this.player.id, season);
+    this.seasonFormatted = season;
+    let seasonUnf = this.seasonFormatted.replace("-", "");
+    this.statsService.getSelectSeasonStats(this.player.id, seasonUnf);
     this.sub = this.statsService.statsUpdated.subscribe((data)=>{
       if(data.length < 1){
         this.noStats = true;
-        this.season = season;
+        this.seasonFormatted = season;
       } else if (data.length >= 1){
         this.noStats = false;
-      this.season = season;
+      this.seasonFormatted = season;
       this.currentYearStats = data[0].stat;
       }
     })

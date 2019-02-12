@@ -4,5 +4,9 @@ p {
 }
 
 .nostats {
-    min-height: 500px;
+    min-height: 400px;
+}
+
+.stats {
+    min-height: 400px;
 }

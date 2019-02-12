@@ -7,11 +7,11 @@
     </mat-option>
 </mat-select>
 </mat-form-field>
-<p class="nostats" *ngIf="noStats">Sorry, no NHL stats found for {{player.fullName}} for {{season}}</p>
+<h5>Season: {{seasonFormatted}}</h5>
+<p class="nostats" *ngIf="noStats">Sorry, no NHL stats found for {{player.fullName}} for {{seasonFormatted}}</p>
 <div *ngIf="!noStats">
-<div class="row" *ngIf="player.primaryPosition.name!=='Goalie'">
+<div class="row stats" *ngIf="player.primaryPosition.name!=='Goalie'">
   <div class="col-md-6">
-      <h5>Season: {{season}}</h5>
       <p>Games played: {{currentYearStats?.games}}</p>
       <p>Goals {{currentYearStats?.goals}}</p>
       <p>Assists: {{currentYearStats?.assists}}</p>
@@ -22,7 +22,6 @@
       <p *ngIf="currentYearStats?.games < 20">Points Pace(82 games): N/A</p>
   </div>
   <div class="col-md-6">
-      <br>
       <p>Plus/Minus: {{currentYearStats?.plusMinus}} </p>
       <p>PowerPlay Goals: {{currentYearStats?.powerPlayGoals}}</p>
       <p>PowerPlay Points: {{currentYearStats?.powerPlayPoints}}</p>
@@ -32,14 +31,13 @@
       <p>Hits: {{currentYearStats?.hits}}</p>
   </div>
 </div>
-<div class="row" *ngIf="player.primaryPosition.name==='Goalie'">
+<div class="row stats" *ngIf="player.primaryPosition.name==='Goalie'">
     <div class="col-md-6">
-        <h5>Season: {{season}}</h5>
         <p>Starts: {{currentYearStats?.gamesStarted}}</p>
         <p>Wins: {{currentYearStats?.wins}} </p>
         <p>Losses: {{currentYearStats?.losses}} </p>
         <p>OT Losses: {{currentYearStats?.ot}}</p>
-        <p>GAA: {{currentYearStats?.goalAgainstAverage | number: '1.2-2'}}</p>
+        <p>GAA: {{currentYearStats?.goalAgainstAverage | number: '1.2-3'}}</p>
         <p>Save %: {{currentYearStats?.savePercentage}}</p>
         <p>Shutouts: {{currentYearStats?.shutouts}}</p>
     </div>
