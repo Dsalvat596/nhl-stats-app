@@ -1,3 +1,7 @@
+html {
+    scroll-behavior: smooth;
+  }
+
 .logo-tabs {
     width: 40px;
     min-height: 30px;

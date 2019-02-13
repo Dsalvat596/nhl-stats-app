@@ -24,4 +24,8 @@ export class HomeComponent implements OnInit {
     })
   }
 
+  backToTop(){
+    window.scrollTo(1,1);
+
+  }
 }

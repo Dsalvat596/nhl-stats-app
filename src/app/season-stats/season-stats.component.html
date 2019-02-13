@@ -37,18 +37,18 @@
         <p>Wins: {{currentYearStats?.wins}} </p>
         <p>Losses: {{currentYearStats?.losses}} </p>
         <p>OT Losses: {{currentYearStats?.ot}}</p>
-        <p>GAA: {{currentYearStats?.goalAgainstAverage | number: '1.2-3'}}</p>
-        <p>Save %: {{currentYearStats?.savePercentage}}</p>
+        <p>GAA: {{currentYearStats?.goalAgainstAverage | number: '1.2-2'}}</p>
+        <p>Save %: {{currentYearStats?.savePercentage |number: '0.3-3'}}</p>
         <p>Shutouts: {{currentYearStats?.shutouts}}</p>
     </div>
     <div class="col-md-6">
         <p>Total Saves: {{currentYearStats?.saves}}</p>
         <p>ES Saves: {{currentYearStats?.evenSaves}}</p>
         <p>ES Shots Faced: {{currentYearStats?.evenShots}}</p>
-        <p>ES Save%: {{currentYearStats?.evenStrengthSavePercentage /100 |number: '0.2-3'}}</p>
+        <p>ES Save%: {{currentYearStats?.evenStrengthSavePercentage /100 |number: '0.3-3'}}</p>
         <p>PP Saves: {{currentYearStats?.powerPlaySaves}}</p>
         <p>PP Shots Faced: {{currentYearStats?.powerPlayShots}}</p>
-        <p>PP Save%: {{currentYearStats?.powerPlaySavePercentage /100 |number: '0.2-3'}} </p>
+        <p>PP Save%: {{currentYearStats?.powerPlaySavePercentage /100 |number: '0.3-3'}} </p>
     </div>
 
 </div>

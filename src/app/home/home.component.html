@@ -1,8 +1,10 @@
 <!-- <div class="container"> -->
+  <div name="top"></div>
     <div class="row">
       <div class="col-md-2 teams-list">
         <ul class="list-group row">
         <li class="list-group-item clearfix list-group-item-action"
+        (click)="backToTop()"
          style="cursor: pointer;" 
          *ngFor="let team of allTeams"
          routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}" 
