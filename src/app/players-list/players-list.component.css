@@ -1,3 +1,8 @@
+.roster-player {
+    color: rgba(45, 45, 46, 0.726);
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+}
+
 .roster-player:hover {
     color: red;
     cursor: pointer;
@@ -6,4 +11,8 @@
 img {
     max-width: 150px;
     padding-bottom: 13px;
+}
+
+@media only screen and (max-width: 620px){
+  
 }

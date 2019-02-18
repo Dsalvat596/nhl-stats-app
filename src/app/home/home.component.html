@@ -1,7 +1,7 @@
 <!-- <div class="container"> -->
   <div name="top"></div>
     <div class="row">
-      <div class="col-md-2 teams-list">
+      <div class="col-3 teams-list">
         <ul class="list-group row">
         <li class="list-group-item clearfix list-group-item-action"
         (click)="backToTop()"
@@ -9,10 +9,10 @@
          *ngFor="let team of allTeams"
          routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}" 
          [routerLink]="['/teams', team.id, 'roster']"
-         ><span><img class="logo-tabs" src="src\assets\img\logo\{{team.id}}.png">{{team.name}}</span></li>
+         ><img class="logo-tabs" src="src\assets\img\logo\{{team.id}}.png"><span id="team-name-tab">{{team.name}}</span></li>
       </ul>
       </div>
-      <div class="col-md-9">
+      <div class="col-8">
         <div class="team-logo">
         <router-outlet></router-outlet>
       </div>
