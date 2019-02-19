@@ -10,7 +10,7 @@ import { Subscription } from 'rxjs';
   styleUrls: ['./player-detail.component.css']
 })
 export class PlayerDetailComponent implements OnInit, OnDestroy {
-private thisPlayer: Player;
+public thisPlayer: Player;
 private sub: Subscription;
   constructor(private playersService: PlayersService,  private route: ActivatedRoute, private router: Router) { }
 
