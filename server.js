@@ -1,18 +1,15 @@
 const express = require('express');
-const http = require('http');
+const http = require('http')
 const path = require('path');
 
 const app = express();
 
-app.use(express.static(__dirname,  'dist/hockey-app'));
+app.use(express.static(path.join(__dirname, 'dist/hockey-app')));
+app.use(express.static(path.join(__dirname, 'dist/hockey-app/assets')));
 
-app.get('*', function(req, res) { 
-    res.sendFile(path.join(__dirname, 'dist/hockey-app/index.html'));
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'dist/hockey-app/index.html'));
 });
-
-// app.route('/*', function(req, res){
-//     res.redirect(__dirname, 'dist/hockey-app/index.html');
-// });
 
 const port = process.env.PORT || 3000;
 app.set('port', port);

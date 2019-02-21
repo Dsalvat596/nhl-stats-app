@@ -5,7 +5,7 @@
         <span id="captain" *ngIf="thisPlayer.captain">C</span>
         <span id="alternateCaptain" *ngIf="thisPlayer.alternateCaptain">A</span>
         <span id="playerNumber"> #{{thisPlayer.primaryNumber}}</span></h4>
-      <img src="src\assets\img\flag\{{thisPlayer.nationality}}.png">
+      <img src="assets\img\flag\{{thisPlayer.nationality}}.png">
       <p *ngIf="thisPlayer.rookie" style="color: red; font-style: italic">Rookie</p>
       <p>Age: {{thisPlayer.currentAge}}</p>
       <p>Pos: {{thisPlayer.primaryPosition.name}}</p>

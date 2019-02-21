@@ -9,7 +9,7 @@
          *ngFor="let team of allTeams"
          routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}" 
          [routerLink]="['/teams', team.id, 'roster']"
-         ><img class="logo-tabs" src="src\assets\img\logo\{{team.id}}.png"><span id="team-name-tab">{{team.name}}</span></li>
+         ><img class="logo-tabs" src="assets\img\logo\{{team.id}}.png"><span id="team-name-tab">{{team.name}}</span></li>
       </ul>
       </div>
       <div class="col-8">
