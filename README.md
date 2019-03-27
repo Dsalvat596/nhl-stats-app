@@ -1,5 +1,9 @@
 # HockeyApp
 
+A lightweight and quick reference for NHL players and stats.
+
+Live demo HERE: https://nhl-hockey-app.herokuapp.com/
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.2.5.
 
 ## Development server
